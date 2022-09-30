@@ -18,7 +18,6 @@ public class SplashScreen extends AppCompatActivity {
 
         setContentView(R.layout.activity_splash_screen);
 
-        //Utility.setFullScreenForActivity(this);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
