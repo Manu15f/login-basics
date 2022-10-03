@@ -1,19 +1,32 @@
 <resources>
+
     <string name="app_name">Manu</string>
-
-    <string name="permission_rationale">"Contacts permissions are needed for providing email
-        completions."
-    </string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email completions."</string>
     <string name="title_activity_main">MainActivity</string>
-
     <string name="title_activity_register">RegisterActivity</string>
-
     <string name="title_activity_forgot">ForgotPassActivity</string>
-
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
-    <string name="action_settings">Settings</string>
-
+    <string name="settings">Settings</string>
     <string name="facebook_app_id">Your facebook app id</string>
+
+    <!-- Strings related to login -->
+    <string name="app_decription">Your best app</string>
+    <string name="login">Login</string>
+    <string name="or">or</string>
+    <string name="error_invalid_email">Invalid Email</string>
+    <string name="error_invalid_password">The password is too short</string>
+    <string name="error_incorrect_password">Email or password incorrect</string>
+    <string name="error_field_required">Required</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="create_account">Register</string>
+
+    <!-- Strings related to create account -->
+    <string name="already_registered">Already have an account? Sign in</string>
+    <string name="prompt_name">Name</string>
+    <string name="action_register">Register</string>
+
+    <!-- Strings related to forgot account-->
+    <string name="action_recover">Recover</string>
+    <string name="remembered_password">Just remembered it?</string>
 </resources>

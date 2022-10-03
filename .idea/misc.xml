@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/awdacer/.gradle/caches/transforms-3/94554b678950ae1f9ae3da7d23e513c1/transformed/play-services-cast-framework-12.0.1/res/layout/cast_expanded_controller_activity.xml" value="0.18802083333333333" />
+        <entry key="..\:/android/repository/login-basics/app/src/main/res/drawable/login_btn.xml" value="0.198" />
         <entry key="..\:/android/repository/login-basics/app/src/main/res/layout/activity_create_account.xml" value="0.33" />
         <entry key="..\:/android/repository/login-basics/app/src/main/res/layout/activity_forgot_pass.xml" value="0.358695652173913" />
         <entry key="..\:/android/repository/login-basics/app/src/main/res/layout/activity_login.xml" value="0.358695652173913" />
@@ -11,7 +12,9 @@
         <entry key="..\:/android/repository/login-basics/app/src/main/res/layout/activity_splash_screen.xml" value="0.18802083333333333" />
         <entry key="..\:/android/repository/login-basics/app/src/main/res/layout/app_bar_main.xml" value="0.358695652173913" />
         <entry key="..\:/android/repository/login-basics/app/src/main/res/layout/content_main.xml" value="0.358695652173913" />
+        <entry key="..\:/android/repository/login-basics/app/src/main/res/layout/login.xml" value="0.358695652173913" />
         <entry key="..\:/android/repository/login-basics/app/src/main/res/layout/nav_header_main.xml" value="0.358695652173913" />
+        <entry key="..\:/android/repository/login-basics/app/src/main/res/menu/main.xml" value="0.18802083333333333" />
         <entry key="..\:/android/repository/login-basics/app/src/main/res/mipmap-anydpi-v26/logo.xml" value="0.198" />
         <entry key="..\:/android/repository/login-basics/app/src/main/res/mipmap-anydpi-v26/logo_round.xml" value="0.198" />
       </map>
@@ -55,6 +58,9 @@
         </list>
       </value>
     </option>
+  </component>
+  <component name="ProjectPlainTextFileTypeManager">
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/login.xml" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />

@@ -76,7 +76,7 @@
                         android:id="@+id/edit_email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/prompt_email"
+                        android:hint="email"
                         android:inputType="textEmailAddress"
                         android:maxLines="1"
                         android:padding="8dp"
@@ -92,14 +92,15 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
-                        android:hint="@string/prompt_password"
+                        android:hint="password"
                         android:imeActionId="@+id/login"
                         android:imeOptions="actionUnspecified"
                         android:inputType="textPassword"
                         android:maxLines="1"
                         android:padding="8dp"
                         android:singleLine="true"
-                        android:textColorHint="@color/grey_0" />
+                        android:textColorHint="@color/grey_0"
+                        tools:ignore="InvalidImeActionId" />
                 </android.support.design.widget.TextInputLayout>
 
                 <Button
@@ -117,7 +118,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:gravity="center"
-                    android:text="@string/different_login"
+                    android:text="@string/or"
                     android:textColor="@color/grey_1000"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
 

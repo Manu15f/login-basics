@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Manu</string>
+    <string name="permission_rationale">"Le autorizzazioni dei contatti sono necessarie per fornire i completamenti delle e-mail."</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="title_activity_forgot">ForgotPassActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="settings">Impostazioni</string>
+    <string name="facebook_app_id">Il tuo ID Facebook</string>
+
+    <!-- Strings related to login -->
+    <string name="app_decription">La tua app migliore</string>
+    <string name="login">Accedi </string>
+    <string name="or">oppure</string>
+    <string name="error_invalid_email">Email non valida</string>
+    <string name="error_invalid_password">La password è troppo corta</string>
+    <string name="error_incorrect_password">Email o password sbagliate</string>
+    <string name="error_field_required">Necessario</string>
+    <string name="forgot_password">Password dimenticata?</string>
+    <string name="create_account">Registrazione</string>
+
+    <!-- Strings related to create account -->
+    <string name="already_registered">Hai già un account? Accedi</string>
+    <string name="prompt_name">Nome</string>
+    <string name="action_register">Regisrati</string>
+
+    <!-- Strings related to forgot account-->
+    <string name="action_recover">Recupera</string>
+    <string name="remembered_password">Te lo ricordi?</string>
+</resources>
