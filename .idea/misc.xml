@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/android/repository/login-basics/app/src/main/res/layout/activity_create_account.xml" value="0.1585144927536232" />
         <entry key="..\:/android/repository/login-basics/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/android/repository/login-basics/app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
       </map>
