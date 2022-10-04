@@ -51,6 +51,7 @@ import com.google.android.gms.common.api.Scope;
 import com.google.android.gms.plus.Plus;
 import com.google.android.gms.plus.model.people.Person;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.textfield.TextInputLayout;
 
 import org.json.JSONObject;
 
@@ -87,8 +88,8 @@ public class LoginActivity extends AppCompatActivity implements
     private UserLoginTask mAuthTask = null;
 
     // UI references.
-    private AutoCompleteTextView mEmailView;
-    private EditText mPasswordView;
+    private TextInputLayout mEmailView;
+    private TextInputLayout mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
 
@@ -126,11 +127,25 @@ public class LoginActivity extends AppCompatActivity implements
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
 
-        mEmailView = (AutoCompleteTextView) findViewById(R.id.txt_email);
+        mEmailView = (TextInputLayout) findViewById(R.id.txt_email);
         populateAutoComplete();
 
-        mPasswordView = (EditText) findViewById(R.id.txt_password);
-        mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+        mPasswordView = (TextInputLayout) findViewById(R.id.txt_password);
+        mPasswordView.addOnEditTextAttachedListener(new TextInputLayout.OnEditTextAttachedListener() {
+            @Override
+            public void onEditTextAttached(@NonNull TextInputLayout textInputLayout) {
+
+            }
+
+            public boolean onEditTextAttached(TextView textView, int id, KeyEvent keyEvent) {
+                if (id == R.id.login || id == EditorInfo.IME_NULL) {
+                    attemptLogin();
+                    return true;
+                }
+                return false;
+            }
+        });
+       /* mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
                 if (id == R.id.login || id == EditorInfo.IME_NULL) {
@@ -139,7 +154,7 @@ public class LoginActivity extends AppCompatActivity implements
                 }
                 return false;
             }
-        });
+        });*/
 
         txt_create = (TextView) findViewById(R.id.txt_create);
         txt_create.setOnClickListener(this);
@@ -263,8 +278,10 @@ public class LoginActivity extends AppCompatActivity implements
         mPasswordView.setError(null);
 
         // Store values at the time of the login attempt.
-        String email = mEmailView.getText().toString();
-        String password = mPasswordView.getText().toString();
+        String email = mEmailView.toString();
+        //String email = (EditText) mEmailView.getText().toString();
+        String password = mPasswordView.toString();
+        //String password = mPasswordView.getText().toString();
 
         boolean cancel = false;
         View focusView = null;
@@ -388,13 +405,14 @@ public class LoginActivity extends AppCompatActivity implements
         ArrayAdapter<String> adapter =
                 new ArrayAdapter<>(LoginActivity.this,
                         android.R.layout.simple_dropdown_item_1line, emailAddressCollection);
-
-        mEmailView.setAdapter(adapter);
+        //TODO vedere bene la funzione
+        //mEmailView.setAdapter(adapter);
     }
 
     @Override
     public void onClick(View v) {
-        String email = mEmailView.getText().toString();
+        String email = mEmailView.toString();
+        //String email = mEmailView.getText().toString();
 
         switch (v.getId()) {
             case R.id.g_sign_in_button:

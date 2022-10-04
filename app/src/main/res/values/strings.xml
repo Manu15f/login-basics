@@ -20,6 +20,7 @@
     <string name="error_field_required">Required</string>
     <string name="forgot_password">Forgot Password?</string>
     <string name="create_account">Register</string>
+    <string name="email">Email</string>
 
     <!-- Strings related to create account -->
     <string name="already_registered">Already have an account? Sign in</string>
