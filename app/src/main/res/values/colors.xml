@@ -20,6 +20,7 @@
     <item name="top_main_menu" type="color">#45645C</item>
     <item name="top_main_menu30" type="color">#640d4d0e</item>
     <item name="btn_background" type="color">#ff424242</item>
+    <item name="black" type="color">#0C0C0C</item>
 
     <color name="top_item">#a6c</color>
     <color name="sticky_item">#45645C</color>

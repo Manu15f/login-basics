@@ -20,8 +20,7 @@
     <string name="error_incorrect_password">Email o password sbagliate</string>
     <string name="error_field_required">Necessario</string>
     <string name="forgot_password">Password dimenticata?</string>
-    <string name="create_account">Registrazione</string>
-    <string name="email">Email</string>
+    <string name="create_account">Registrati</string>
 
     <!-- Strings related to create account -->
     <string name="already_registered">Hai già un account? Accedi</string>

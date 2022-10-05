@@ -156,7 +156,7 @@ public class LoginActivity extends AppCompatActivity implements
             }
         });*/
 
-        txt_create = (TextView) findViewById(R.id.txt_create);
+        txt_create = (TextView) findViewById(R.id.create_new_account);
         txt_create.setOnClickListener(this);
 
         txt_forgot = (TextView) findViewById(R.id.txt_forgot);
@@ -421,7 +421,7 @@ public class LoginActivity extends AppCompatActivity implements
             case R.id.email_sign_in_button:
                 attemptLogin();
                 break;
-            case R.id.txt_create:
+            case R.id.create_new_account:
                 Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
                 intent.putExtra(Constants.TAG_EMAIL, email);
                 startActivity(intent);

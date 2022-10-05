@@ -104,56 +104,31 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
-
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/txt_forgot"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="10dp">
-
-                    <TextView
-                        android:id="@+id/txt_forgot"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:background="@drawable/noaccount_background"
-                        android:gravity="center"
-                        android:textColor="@color/grey_1000"
-                        android:paddingBottom="15dp"
-                        android:clickable="true"
-                        android:layout_marginTop="2dp"
-                        android:paddingLeft="2dp"
-                        android:paddingTop="15dp"
-                        android:text="@string/forgot_password"
-                        android:textAppearance="?android:attr/textAppearanceSmall" />
-
-                    <TextView
-                        android:id="@+id/txt_create"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textColor="@color/grey_1000"
-                        android:layout_marginTop="2dp"
-                        android:background="@drawable/noaccount_background"
-                        android:gravity="center"
-                        android:paddingBottom="15dp"
-                        android:paddingRight="2dp"
-                        android:paddingTop="15dp"
-                        android:text="@string/create_account"
-                        android:clickable="true"
-                        android:textAppearance="?android:attr/textAppearanceSmall" />
-                </LinearLayout>
+                    android:gravity="left"
+                    android:textColor="@color/blue_logo"
+                    android:paddingBottom="15dp"
+                    android:clickable="true"
+                    android:layout_marginTop="10dp"
+                    android:paddingLeft="5dp"
+                    android:text="@string/forgot_password"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textSize="10dp"/>
 
                 <Button
                     android:id="@+id/email_sign_in_button"
-                    android:textStyle="bold"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/grey_0"
                     android:layout_marginTop="12dp"
-                    android:background="@drawable/login_btn"
+                    android:text="@string/login"
+                    android:textColor="@color/grey_0"
                     android:textSize="15dp"
-                    android:text="@string/login" />
+                    android:textStyle="bold"
+                    android:background="@drawable/button"
+                    app:backgroundTint="@color/blue_logo" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -164,25 +139,40 @@
                     android:textColor="@color/grey_1000"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
 
-                <com.google.android.gms.common.SignInButton
-                    android:id="@+id/g_sign_in_button"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <com.google.android.gms.common.SignInButton
+                        android:id="@+id/g_sign_in_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:padding="5dp" />
+
+                    <com.facebook.login.widget.LoginButton
+                        xmlns:fb="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/f_sign_in_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="43dp"
+                        android:layout_weight="1"
+                        android:layout_marginTop="20dp"
+                        fb:login_text="FACEBOOK"
+                        android:padding="5dp" />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/create_new_account"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:padding="5dp" />
-
-                <com.facebook.login.widget.LoginButton
-                    xmlns:fb="http://schemas.android.com/apk/res-auto"
-                    android:id="@+id/f_sign_in_button"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginTop="5dp"
-                    fb:login_text="FACEBOOK"
-                    android:padding="5dp" />
+                    android:textColor="@color/black"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/create_account"
+                    android:textStyle="bold"
+                    android:textSize="15dp"
+                    android:background="@drawable/button"
+                    app:backgroundTint="@color/amber_600"/>
 
             </LinearLayout>
         </LinearLayout>
