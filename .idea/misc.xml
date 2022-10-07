@@ -12,8 +12,9 @@
         <entry key="..\:/android/repository/login-basics/app/src/main/res/drawable/logo_background.xml" value="0.196" />
         <entry key="..\:/android/repository/login-basics/app/src/main/res/drawable/noaccount_background.xml" value="0.198" />
         <entry key="..\:/android/repository/login-basics/app/src/main/res/drawable/side_nav_bar.xml" value="0.196" />
-        <entry key="..\:/android/repository/login-basics/app/src/main/res/layout/activity_create_account.xml" value="0.1585144927536232" />
-        <entry key="..\:/android/repository/login-basics/app/src/main/res/layout/activity_login.xml" value="0.33" />
+        <entry key="..\:/android/repository/login-basics/app/src/main/res/layout-v21/activity_create_account.xml" value="0.358695652173913" />
+        <entry key="..\:/android/repository/login-basics/app/src/main/res/layout/activity_create_account.xml" value="0.22" />
+        <entry key="..\:/android/repository/login-basics/app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="..\:/android/repository/login-basics/app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
         <entry key="..\:/android/repository/login-basics/app/src/main/res/layout/nav_header_main.xml" value="0.1585144927536232" />
         <entry key="..\:/android/repository/login-basics/app/src/main/res/menu/activity_main_drawer.xml" value="0.18802083333333333" />

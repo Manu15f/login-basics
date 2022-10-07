@@ -4,6 +4,7 @@ import static android.Manifest.permission.READ_CONTACTS;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.LoaderManager;
 import android.app.ProgressDialog;
@@ -25,9 +26,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -108,7 +107,7 @@ public class LoginActivity extends AppCompatActivity implements
     private SignInButton mPlusSignInButton;
     private Button mEmailSignInButton;
 
-    private TextView txt_create, txt_forgot;
+    private TextView create_new_account, txt_forgot;
     private LoginButton facebookLoginButton;
 
     ProgressDialog ringProgressDialog;
@@ -138,11 +137,11 @@ public class LoginActivity extends AppCompatActivity implements
             }
 
             public boolean onEditTextAttached(TextView textView, int id, KeyEvent keyEvent) {
-                if (id == R.id.login || id == EditorInfo.IME_NULL) {
-                    attemptLogin();
-                    return true;
+                if (id != R.id.login && id != EditorInfo.IME_NULL) {
+                    return false;
                 }
-                return false;
+                attemptLogin();
+                return true;
             }
         });
        /* mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -156,13 +155,13 @@ public class LoginActivity extends AppCompatActivity implements
             }
         });*/
 
-        txt_create = (TextView) findViewById(R.id.create_new_account);
-        txt_create.setOnClickListener(this);
+        create_new_account = findViewById(R.id.create_new_account);
+        create_new_account.setOnClickListener(this);
 
         txt_forgot = (TextView) findViewById(R.id.txt_forgot);
         txt_forgot.setOnClickListener(this);
 
-        mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
+        mEmailSignInButton = (Button) findViewById(R.id.email_login_button);
         mEmailSignInButton.setOnClickListener(this);
 
         //Google+ Login
@@ -322,6 +321,7 @@ public class LoginActivity extends AppCompatActivity implements
     /**
      * Shows the progress UI and hides the login form.
      */
+    @SuppressLint("ObsoleteSdkInt")
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
     private void showProgress(final boolean show) {
         // On Honeycomb MR2 we have the ViewPropertyAnimator APIs, which allow
@@ -409,6 +409,7 @@ public class LoginActivity extends AppCompatActivity implements
         //mEmailView.setAdapter(adapter);
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
         String email = mEmailView.toString();
@@ -418,7 +419,7 @@ public class LoginActivity extends AppCompatActivity implements
             case R.id.g_sign_in_button:
                 onSignInClicked();
                 break;
-            case R.id.email_sign_in_button:
+            case R.id.email_login_button:
                 attemptLogin();
                 break;
             case R.id.create_new_account:

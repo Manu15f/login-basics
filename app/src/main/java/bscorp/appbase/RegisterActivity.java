@@ -5,12 +5,17 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.textfield.TextInputLayout;
+
+import java.util.Objects;
 
 import utils.CheckNetwork;
 import utils.Constants;
@@ -20,7 +25,7 @@ import utils.ValidateUserInfo;
  * Created by AndreBTS on 20/08/2015.
  */
 public class RegisterActivity extends Activity implements View.OnClickListener{
-    EditText edit_nome, edit_email, edit_password;
+    TextInputLayout edit_nome, edit_email, edit_password;
     TextView txt_alreadyHave;
     Button btn_registrar;
     private CreateUserTask mCreateTask = null;
@@ -38,10 +43,10 @@ public class RegisterActivity extends Activity implements View.OnClickListener{
             email = savedInstanceState.getString(Constants.TAG_EMAIL);
         }
 
-        edit_nome = (EditText) findViewById(R.id.edit_nome);
-        edit_email = (EditText) findViewById(R.id.edit_email);
-        edit_email.setText(email);
-        edit_password = (EditText) findViewById(R.id.edit_password);
+        edit_nome =  (TextInputLayout) findViewById(R.id.edit_nome);
+        edit_email = (TextInputLayout) findViewById(R.id.edit_email);
+        edit_email.setTag(email);
+        edit_password =  (TextInputLayout) findViewById(R.id.edit_password);
         txt_alreadyHave = (TextView) findViewById(R.id.txt_already_have);
         txt_alreadyHave.setOnClickListener(this);
 
@@ -58,9 +63,12 @@ public class RegisterActivity extends Activity implements View.OnClickListener{
      */
     public void attemptCreate() {
         // Store values at the time of the login attempt.
-        String name = edit_nome.getText().toString();
-        String email = edit_email.getText().toString();
-        String password = edit_password.getText().toString();
+        //String name = edit_nome.getText().toString();
+        String name = edit_nome.toString();
+        //String email = edit_email.getText().toString();
+        String email = edit_email.toString();
+        //String password = edit_password.getText().toString();
+        String password = edit_password.toString();
 
         boolean cancel = false;
         View focusView = null;

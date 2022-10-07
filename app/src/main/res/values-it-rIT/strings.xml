@@ -24,8 +24,7 @@
 
     <!-- Strings related to create account -->
     <string name="already_registered">Hai già un account? Accedi</string>
-    <string name="prompt_name">Nome</string>
-    <string name="action_register">Regisrati</string>
+    <string name="name">Nome</string>
 
     <!-- Strings related to forgot account-->
     <string name="action_recover">Recupera</string>
