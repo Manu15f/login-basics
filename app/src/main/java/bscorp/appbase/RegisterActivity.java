@@ -43,7 +43,7 @@ public class RegisterActivity extends Activity implements View.OnClickListener{
             email = savedInstanceState.getString(Constants.TAG_EMAIL);
         }
 
-        edit_nome =  (TextInputLayout) findViewById(R.id.edit_nome);
+        edit_nome =  (TextInputLayout) findViewById(R.id.edit_name);
         edit_email = (TextInputLayout) findViewById(R.id.edit_email);
         edit_email.setTag(email);
         edit_password =  (TextInputLayout) findViewById(R.id.edit_password);
@@ -159,7 +159,7 @@ public class RegisterActivity extends Activity implements View.OnClickListener{
             mCreateTask = null;
             CheckNetwork checkNetwork = new CheckNetwork();
             if (checkNetwork.isConnected(RegisterActivity.this) && success) {
-                Toast.makeText(RegisterActivity.this, "Account created", Toast.LENGTH_SHORT).show();
+                Toast.makeText(RegisterActivity.this, getString(R.string.error_invalid_email), Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(RegisterActivity.this, "Network Error", Toast.LENGTH_SHORT).show();
             }

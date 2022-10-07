@@ -18,13 +18,15 @@
     <string name="error_invalid_email">Email non valida</string>
     <string name="error_invalid_password">La password è troppo corta</string>
     <string name="error_incorrect_password">Email o password sbagliate</string>
-    <string name="error_field_required">Necessario</string>
+    <string name="error_field_required">Richiesto</string>
     <string name="forgot_password">Password dimenticata?</string>
     <string name="create_account">Registrati</string>
 
     <!-- Strings related to create account -->
     <string name="already_registered">Hai già un account? Accedi</string>
     <string name="name">Nome</string>
+    <string name="account_created">Account creato</string>
+    <string name="network_error">Errore di rete</string>
 
     <!-- Strings related to forgot account-->
     <string name="action_recover">Recupera</string>
