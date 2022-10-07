@@ -110,6 +110,8 @@ public class LoginActivity extends AppCompatActivity implements
     private TextView create_new_account, txt_forgot;
     private LoginButton facebookLoginButton;
 
+    private Button nextActivity;
+
     ProgressDialog ringProgressDialog;
 
     @Override
@@ -137,6 +139,9 @@ public class LoginActivity extends AppCompatActivity implements
             }
 
             public boolean onEditTextAttached(TextView textView, int id, KeyEvent keyEvent) {
+                //TODO da verificare l'effettivo funzionamento dell'if.
+                // login è di activity_create_account ma non so se sia quello che voleva.
+                // problema presentatosi dopo aver eliminato la vecchia activity di registrazione
                 if (id != R.id.login && id != EditorInfo.IME_NULL) {
                     return false;
                 }
@@ -216,6 +221,9 @@ public class LoginActivity extends AppCompatActivity implements
         });
 
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+
+        nextActivity = findViewById(R.id.next);
+        nextActivity.setOnClickListener(this);
     }
 
     private void populateAutoComplete() {
@@ -432,6 +440,11 @@ public class LoginActivity extends AppCompatActivity implements
                 Intent intentForgot = new Intent(LoginActivity.this, ForgotPassActivity.class);
                 intentForgot.putExtra(Constants.TAG_EMAIL, email);
                 startActivity(intentForgot);
+                finish();
+                break;
+            case R.id.next:
+                Intent intentNext = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intentNext);
                 finish();
                 break;
         }

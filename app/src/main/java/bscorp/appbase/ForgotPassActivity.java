@@ -13,6 +13,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputLayout;
+
 import utils.CheckNetwork;
 import utils.Constants;
 import utils.ValidateUserInfo;
@@ -21,7 +23,7 @@ import utils.ValidateUserInfo;
  * Created by AndreBTS on 20/08/2015.
  */
 public class ForgotPassActivity extends Activity implements View.OnClickListener{
-    EditText edit_email;
+    TextInputLayout edit_email;
     TextView txt_remembered;
     Button btn_recover;
     ProgressDialog ringProgressDialog;
@@ -40,8 +42,8 @@ public class ForgotPassActivity extends Activity implements View.OnClickListener
             email = savedInstanceState.getString(Constants.TAG_EMAIL);
         }
 
-        edit_email = (EditText) findViewById(R.id.edit_email);
-        edit_email.setText(email);
+        edit_email = (TextInputLayout) findViewById(R.id.edit_email);
+        edit_email.setTag(email);
 
         txt_remembered = (TextView) findViewById(R.id.txt_remembered);
         txt_remembered.setOnClickListener(this);
@@ -59,7 +61,7 @@ public class ForgotPassActivity extends Activity implements View.OnClickListener
      */
     public void attemptRecover() {
         // Store values at the time of the login attempt.
-        String email = edit_email.getText().toString();
+        String email = edit_email.toString();
 
         boolean cancel = false;
         View focusView = null;
@@ -134,7 +136,7 @@ public class ForgotPassActivity extends Activity implements View.OnClickListener
             mForgotTask = null;
             CheckNetwork checkNetwork = new CheckNetwork();
             if (checkNetwork.isConnected(ForgotPassActivity.this) && success) {
-                Toast.makeText(ForgotPassActivity.this, edit_email.getText() + " your new passwork is ...", Toast.LENGTH_SHORT).show();//Or whatever your recovery method is...
+                Toast.makeText(ForgotPassActivity.this, edit_email.toString() + " your new passwork is ...", Toast.LENGTH_SHORT).show();//Or whatever your recovery method is...
             } else {
                 Toast.makeText(ForgotPassActivity.this, "Network Error", Toast.LENGTH_SHORT).show();
             }

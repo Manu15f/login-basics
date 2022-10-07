@@ -52,6 +52,7 @@ public class RegisterActivity extends Activity implements View.OnClickListener{
 
         btn_registrar = (Button) findViewById(R.id.btn_register);
         btn_registrar.setOnClickListener(this);
+        //Toast.makeText(RegisterActivity.this, getString(R.string.error_invalid_email), Toast.LENGTH_SHORT).show();
 
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
     }

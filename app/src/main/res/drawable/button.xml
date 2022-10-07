@@ -7,7 +7,6 @@
         android:topLeftRadius="8dp"
         android:topRightRadius="8dp" >
     </corners>
-
     <!--<solid android:color="#494848" />-->
     <!--<solid android:color="@color/blue_logo" />-->
 
