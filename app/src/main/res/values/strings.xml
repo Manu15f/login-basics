@@ -30,4 +30,12 @@
     <!-- Strings related to forgot account-->
     <string name="action_recover">Recover</string>
     <string name="remembered_password">Just remembered it?</string>
+
+    <!--Strings related to main activity-->
+    <string name="future_action">Future action</string>
+    <string name="gallery">Gallery</string>
+    <string name="tools">Tools</string>
+    <string name="communication">Communication</string>
+    <string name="share">Share</string>
+    <string name="send">Send</string>
 </resources>

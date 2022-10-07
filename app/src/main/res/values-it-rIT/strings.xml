@@ -31,4 +31,12 @@
     <!-- Strings related to forgot account-->
     <string name="action_recover">Recupera</string>
     <string name="remembered_password">Te lo ricordi?</string>
+
+    <!--Strings related to main activity-->
+    <string name="future_action">Futura azione</string>
+    <string name="gallery">Galleria</string>
+    <string name="tools">Strumenti</string>
+    <string name="communication">Comunicazione</string>
+    <string name="share">Condividi</string>
+    <string name="send">Invia</string>
 </resources>

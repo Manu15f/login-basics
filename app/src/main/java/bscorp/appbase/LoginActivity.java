@@ -451,7 +451,7 @@ public class LoginActivity extends AppCompatActivity implements
     }
 
     private void onSignInClicked() {
-//        toastLoading.show();
+        //toastLoading.show();
         // User clicked the sign-in button, so begin the sign-in process and automatically
         // attempt to resolve any errors that occur.
         ringProgressDialog = ProgressDialog.show(LoginActivity.this, "Connecting...", "Atempting to connect", true);
