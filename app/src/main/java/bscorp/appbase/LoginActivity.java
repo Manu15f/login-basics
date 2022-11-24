@@ -19,6 +19,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
 import android.util.Log;
@@ -170,6 +171,13 @@ public class LoginActivity extends AppCompatActivity implements
 
         mEmailSignInButton = (Button) findViewById(R.id.email_login_button);
         mEmailSignInButton.setOnClickListener(this);
+        /*mEmailSignInButton.setOnClickListener(signUp1 -> new Handler().postDelayed(() -> {
+
+            if (isValidField()) {
+                Log.d("Login", "Start Login");
+                signUp();
+            }
+        }, 0));*/
 
         //Google+ Login
         mPlusSignInButton = (SignInButton) findViewById(R.id.g_sign_in_button);
