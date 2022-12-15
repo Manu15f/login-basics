@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_menu_navigation);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -61,7 +61,9 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    @Override
+   /*
+   COMMENTATO PERCHè HO ELIMINATO LE IMPOSTAZIONI DAL MENù LATERALE E L'HO MESSO NEL NAV QUINDIV EDERE BENE E ADATTARE NEL RESTO DEI MENù
+   @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
@@ -81,7 +83,7 @@ public class MainActivity extends AppCompatActivity
         }
 
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override

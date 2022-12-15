@@ -33,6 +33,7 @@
 
     <!--Strings related to main activity-->
     <string name="future_action">Future action</string>
+    <string name="options">Options</string>
     <string name="gallery">Gallery</string>
     <string name="tools">Tools</string>
     <string name="communication">Communication</string>
