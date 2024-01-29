@@ -6,7 +6,6 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
-import android.app.ActionBar;
 import android.app.LoaderManager;
 import android.app.ProgressDialog;
 import android.content.CursorLoader;
@@ -19,7 +18,6 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
 import android.util.Log;
@@ -35,7 +33,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -45,11 +42,12 @@ import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.Scopes;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.Scope;
 import com.google.android.gms.plus.Plus;
 import com.google.android.gms.plus.model.people.Person;
 import com.google.android.material.snackbar.Snackbar;
@@ -108,6 +106,7 @@ public class LoginActivity extends AppCompatActivity implements
     private CallbackManager callbackManager;
 
     private SignInButton mPlusSignInButton;
+    private GoogleSignInClient mGoogleSignInClient;
     private Button mEmailSignInButton;
 
     private TextView create_new_account, txt_forgot;
@@ -166,10 +165,10 @@ public class LoginActivity extends AppCompatActivity implements
         create_new_account = findViewById(R.id.create_new_account);
         create_new_account.setOnClickListener(this);
 
-        txt_forgot = (TextView) findViewById(R.id.txt_forgot);
+        txt_forgot = findViewById(R.id.txt_forgot);
         txt_forgot.setOnClickListener(this);
 
-        mEmailSignInButton = (Button) findViewById(R.id.email_login_button);
+        mEmailSignInButton = findViewById(R.id.email_login_button);
         mEmailSignInButton.setOnClickListener(this);
         /*mEmailSignInButton.setOnClickListener(signUp1 -> new Handler().postDelayed(() -> {
 
@@ -180,7 +179,7 @@ public class LoginActivity extends AppCompatActivity implements
         }, 0));*/
 
         //Google+ Login
-        mPlusSignInButton = (SignInButton) findViewById(R.id.g_sign_in_button);
+        /*mPlusSignInButton = findViewById(R.id.g_sign_in_button);
         mPlusSignInButton.setSize(SignInButton.SIZE_WIDE);
         mPlusSignInButton.setOnClickListener(this);
 
@@ -189,10 +188,19 @@ public class LoginActivity extends AppCompatActivity implements
                 .addOnConnectionFailedListener(this)
                 .addApi(Plus.API)
                 .addScope(new Scope(Scopes.PROFILE))
+                .build();*/
+
+        // Configure sign-in to request the user's ID, email address, and basic
+        // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
                 .build();
 
+        // Build a GoogleSignInClient with the options specified by gso.
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+
         //Facebook Login
-        facebookLoginButton = (LoginButton)findViewById(R.id.f_sign_in_button);
+        facebookLoginButton = findViewById(R.id.f_sign_in_button);
         facebookLoginButton.setReadPermissions(Arrays.asList("public_profile, email, user_birthday, user_friends"));
 
         callbackManager = CallbackManager.Factory.create();
@@ -234,6 +242,11 @@ public class LoginActivity extends AppCompatActivity implements
 
         nextActivity = findViewById(R.id.next);
         nextActivity.setOnClickListener(this);
+    }
+
+    private void signIn() {
+        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
+        startActivityForResult(signInIntent, RC_SIGN_IN);
     }
 
     private void populateAutoComplete() {
